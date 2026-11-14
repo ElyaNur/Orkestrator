@@ -20,7 +20,7 @@ Repo ini hanya berisi installer di halaman [Releases](https://github.com/ElyaNur
 
 ## Yang dibutuhkan
 
-- Windows 10 atau 11 (64-bit). Linux didukung, tetapi belum ada paketnya di sini.
+- Windows 10 atau 11 (64-bit), atau Linux 64-bit berbasis Debian atau Ubuntu.
 - Claude Code sudah terpasang dan sudah masuk dengan akunmu. Orkestra menjalankan `claude` milikmu; ia tidak membawa model atau akun sendiri.
 - Git, untuk fitur pekerjaan.
 
@@ -30,11 +30,19 @@ Repo ini hanya berisi installer di halaman [Releases](https://github.com/ElyaNur
 2. Jalankan installer itu. Windows bisa menampilkan peringatan SmartScreen karena installer belum punya sertifikat penanda tangan kode; pilih "More info" lalu "Run anyway" kalau kamu mengunduhnya dari halaman ini.
 3. Buka Orkestra, buat orchestrator pertamamu, dan tambahkan folder proyek.
 
+Di Linux, unduh `Orkestra_<versi>_amd64.deb` dari rilis yang sama, lalu:
+
+```bash
+sudo dpkg -i Orkestra_<versi>_amd64.deb
+```
+
+Paket ini butuh `libwebkit2gtk-4.1-0` dan `libgtk-3-0`. Kalau `dpkg` mengeluh ada yang kurang, jalankan `sudo apt -f install`.
+
 ## Pembaruan
 
 Orkestra mengecek versi baru saat dibuka dan tiap 6 jam. Kalau ada, muncul lencana di baris bawah; klik untuk melihat catatan rilis dan memasangnya. Tiap pembaruan ditandatangani, dan aplikasi menolak berkas yang tanda tangannya tidak cocok.
 
-Di Linux aplikasi hanya memberi tahu ada versi baru; pemasangannya dengan tangan.
+Di Linux aplikasi hanya memberi tahu ada versi baru. Unduh paket `.deb` yang baru dan pasang dengan `dpkg -i` seperti di atas.
 
 ## Catatan
 
